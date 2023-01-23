@@ -4,17 +4,17 @@ const productsEl = document.querySelector(".products");
 //Render products
 function rederProducts(){
   products.forEach( (product) => {
-    productsEl.innerHTML += ``
-    <div class="item">
+    productsEl.innerHTML += `
+            <div class="item">
                 <div class="item-container">
                     <div class="item-img">
-                        <img src="./img/t1.png" alt="t-shirt 1">
+                        <img src="${product.imgSrc}" alt="${product.name}">
                     </div>
                     <div class="desc">
-                        <h2>T-shirt 1</h2>
-                        <h2><small>$</small>29.99</h2>
+                        <h2>${product.name}</h2>
+                        <h2><small>$</small>${product.price}</h2>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, dicta!
+                        ${product.description}
                         </p>
                     </div>
                     <div class="add-to-wishlist">
@@ -25,8 +25,8 @@ function rederProducts(){
                     </div>
                 </div>
             </div>
-  }
-
-  )
-
+    
+        `; 
+  });
 }
+renderProducts();
