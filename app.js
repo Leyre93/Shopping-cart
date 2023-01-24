@@ -46,9 +46,14 @@ function addToCart(id) {
             ...item,
             numberOfUnits : 1,
         });
-
-        console.log(cart);
-
     }
+
+    updateCart();
+}
+
+// Update cart
+function updateCart(){
+    renderCartItems();
+    renderSubtotal();
 }
 
