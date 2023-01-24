@@ -31,8 +31,21 @@ function renderProducts() {
 }
 renderProducts();
 
-//Add to cart
-function addToCart(id){
-    console.log(id);
+// Cart array
+let cart = [];
+
+// Add to cart
+function addToCart(id) {
+    // check if product already exist in cart
+    if(cart.some((item) => item.id === id)) {
+        alert("Product already in cart!")
+    } else {
+        const item = products.find((product) => product.id === id);
+        
+        cart.push(item);
+
+        console.log(cart);
+
+    }
 }
 
