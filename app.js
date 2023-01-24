@@ -42,7 +42,10 @@ function addToCart(id) {
     } else {
         const item = products.find((product) => product.id === id);
         
-        cart.push(item);
+        cart.push({
+            ...item,
+            numberOfUnits : 1,
+        });
 
         console.log(cart);
 
