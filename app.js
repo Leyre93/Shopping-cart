@@ -60,6 +60,7 @@ function updateCart(){
 
 // Render cart items
 function renderCartItems() {
+    cartItemsEl.innerHTML = ""; // clear cart element
     cart.forEach((item) => {
         cartItemsEl.innerHTML += `
             <div class="cart-item">
@@ -71,9 +72,9 @@ function renderCartItems() {
                     <small>$</small>${item.price}
                 </div>
                 <div class="units">
-                    <div class="btn minus">-</div>
+                    <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.price})">-</div>
                     <div class="number">${item.numberOfUnits}</div>
-                    <div class="btn plus">+</div>           
+                    <div class="btn plus" onclick="changeNumberOfUnits()">+</div>           
                 </div>
             </div>
         `
