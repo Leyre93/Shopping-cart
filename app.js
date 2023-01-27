@@ -87,9 +87,9 @@ function changeNumberOfUnits(action, id) {
         let numberOfUnits = item.numberOfUnits;
 
         if(item.id === id){
-            if(action === "minus"){
+            if(action === "minus" && numberOfUnits > 1) {
                 numberOfUnits--;
-            } else if (action === "plus"){
+            } else if (action === "plus" && numberOfUnits < item.instock){
                 numberOfUnits++;
             }
         }
@@ -100,5 +100,5 @@ function changeNumberOfUnits(action, id) {
         };
     });
 
-    updateCart()
+    updateCart();
 }
