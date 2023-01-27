@@ -72,12 +72,14 @@ function renderCartItems() {
                     <small>$</small>${item.price}
                 </div>
                 <div class="units">
-                    <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.price})">-</div>
+                    <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
                     <div class="number">${item.numberOfUnits}</div>
-                    <div class="btn plus" onclick="changeNumberOfUnits()">+</div>           
+                    <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
                 </div>
             </div>
         `
     });
 }
 
+// Change number of units for an item
+function changeNumberOfUnits(action, id) {}
