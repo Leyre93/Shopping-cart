@@ -60,6 +60,9 @@ function updateCart(){
     renderSubtotal();
 }
 
+// Save cart to local storage
+localStorage.setItem("CART", JSON.stringify(cart));
+
 // Calculate and render subtotal
 function renderSubtotal(){
     let totalPrice = 0, 
