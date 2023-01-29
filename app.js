@@ -39,7 +39,7 @@ let cart = [];
 function addToCart(id) {
     // check if product already exist in cart
     if(cart.some((item) => item.id === id)) {
-        alert("Product already in cart!")
+        changeNumberOfUnits("plus", id);
     } else {
         const item = products.find((product) => product.id === id);
         
