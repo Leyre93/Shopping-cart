@@ -80,7 +80,7 @@ function renderCartItems() {
     cart.forEach((item) => {
         cartItemsEl.innerHTML += `
             <div class="cart-item">
-                <div class="item-info">
+                <div class="item-info" onclick="removeItemFromCart(${item.id})">
                     <img src="${item.imgSrc}" alt="${item.name}">
                     <h4>${item.name}</h4>
                 </div>
@@ -93,8 +93,15 @@ function renderCartItems() {
                     <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
                 </div>
             </div>
-        `
+        `;
     });
+}
+
+// Remove item from cart
+function removeItemFromCart(id){
+    cart = cart.filter((item) => item.id !== id);
+
+    updateCart();
 }
 
 // Change number of units for an item
