@@ -2,6 +2,7 @@
 const productsEl = document.querySelector(".products");
 const cartItemsEl = document.querySelector(".cart-items");
 const subtotalEl = document.querySelector(".subtotal");
+const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 
 //Render products
 function renderProducts() {
@@ -70,6 +71,7 @@ function renderSubtotal(){
     });
 
     subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
+    totalItemsInCartEl.innerHTML = totalItems;
 }
 
 // Render cart items
