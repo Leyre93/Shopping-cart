@@ -1,6 +1,7 @@
 // Select elements
 const productsEl = document.querySelector(".products");
 const cartItemsEl = document.querySelector(".cart-items");
+const subtotalEl = document.querySelector(".subtotal");
 
 //Render products
 function renderProducts() {
@@ -55,7 +56,18 @@ function addToCart(id) {
 // Update cart
 function updateCart(){
     renderCartItems();
-   // renderSubtotal();
+    renderSubtotal();
+}
+
+// Calculate and render subtotal
+function renderSubtotal(){
+    let totalPrice = 0, 
+    totalItems = 0;
+
+    cart.forEach((item) => {
+        totalPrice += item.price * item.numberOfUnits;
+        totalItems += item.numberOfUnits;
+    });
 }
 
 // Render cart items
