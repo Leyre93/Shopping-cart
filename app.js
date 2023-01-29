@@ -35,7 +35,8 @@ function renderProducts() {
 renderProducts();
 
 // Cart array
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart();
 
 // Add to cart
 function addToCart(id) {
